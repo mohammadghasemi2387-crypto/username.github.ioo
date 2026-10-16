@@ -1,0 +1,372 @@
+here<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جشن پیوند عشق ما | کارت دعوت دیجیتال</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css" rel="stylesheet">
+    <style>
+        :root {
+            --rose-gold: #e0a96d;
+            --deep-red: #c94b4b;
+            --soft-pink: #ff85a1;
+            --dark-bg: #0f0a0d;
+            --glass: rgba(255, 255, 255, 0.04);
+            --border-glow: rgba(224, 169, 109, 0.3);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--dark-bg);
+            color: #f3f4f6;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 2px 2px, #2a1b24 1px, transparent 0);
+            background-size: 50px 50px;
+        }
+
+        /* انیمیشن‌های رمانتیک و ملایم */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(224, 169, 109, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(224, 169, 109, 0.6); }
+            100% { box-shadow: 0 0 10px rgba(224, 169, 109, 0.2); }
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.25); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+
+        .falling-petals {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 99;
+            background: linear-gradient(180deg, transparent 90%, rgba(201, 75, 75, 0.05));
+        }
+
+        .hero {
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(15, 10, 13, 0.75), var(--dark-bg)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid var(--rose-gold);
+            position: relative;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--rose-gold);
+            margin: 0 0 10px;
+            text-shadow: 0 2px 15px rgba(224, 169, 109, 0.4);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: -60px auto 40px;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glow);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            transition: 0.4s ease;
+            animation: pulse-glow 6s infinite;
+        }
+
+        .card:hover {
+            border-color: var(--rose-gold);
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--rose-gold);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* تایمر معکوس */
+        .timer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            text-align: center;
+        }
+
+        .timer-box {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(224, 169, 109, 0.2);
+        }
+
+        .timer-num {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--rose-gold);
+            display: block;
+            font-family: monospace;
+        }
+
+        .timer-label {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* مشخصات تالار و مراسم */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .detail-item {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px;
+            border-radius: 12px;
+            border-right: 4px solid var(--rose-gold);
+        }
+
+        .detail-item h3 {
+            margin: 0 0 8px;
+            color: var(--soft-pink);
+            font-size: 1.1rem;
+        }
+
+        /* بخش تبریک‌ها و فرم */
+        .wishes-container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 12px;
+            max-height: 150px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .wish-item {
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        input, textarea {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(224, 169, 109, 0.3);
+            color: white;
+            padding: 14px;
+            width: 100%;
+            border-radius: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--rose-gold);
+            outline: none;
+            box-shadow: 0 0 10px rgba(224, 169, 109, 0.3);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--rose-gold), #b88651);
+            color: #0f0a0d;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            border-radius: 10px;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            filter: brightness(1.15);
+            box-shadow: 0 0 20px rgba(224, 169, 109, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.85rem;
+            opacity: 0.5;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .heart-icon {
+            display: inline-block;
+            color: var(--deep-red);
+            animation: heartBeat 1.5s infinite;
+            margin: 0 5px;
+        }
+
+        @media (max-width: 768px) {
+            .timer-grid { grid-template-columns: repeat(2, 1fr); }
+            .details-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="falling-petals"></div>
+
+<div class="hero">
+    <h1>آریا <span class="heart-icon">♥</span> سارا</h1>
+    <p>دعوت‌نامه رسمی جشن پیوند آسمانی ما</p>
+</div>
+
+<div class="container">
+    
+    <!-- شمارش معکوس دقیق -->
+    <div class="card">
+        <h2 class="section-title">شمارش معکوس تا آغاز زندگی مشترک</h2>
+        <div class="timer-grid">
+            <div class="timer-box">
+                <span class="timer-num" id="days">--</span>
+                <span class="timer-label">روز</span>
+            </div>
+            <div class="timer-box">
+                <span class="timer-num" id="hours">--</span>
+                <span class="timer-label">ساعت</span>
+            </div>
+            <div class="timer-box">
+                <span class="timer-num" id="minutes">--</span>
+                <span class="timer-label">دقیقه</span>
+            </div>
+            <div class="timer-box">
+                <span class="timer-num" id="seconds">--</span>
+                <span class="timer-label">ثانیه</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- اطلاعات زمان و مکان (آدرس جعلی) -->
+    <div class="card">
+        <h2 class="section-title">جزئیات برگزاری مراسم</h2>
+        <div class="details-grid">
+            <div class="detail-item">
+                <h3>زمان جشن</h3>
+                <p style="margin:0; opacity: 0.8;">پنج‌شنبه، ۲۸ آبان ۱۴۰۵</p>
+                <p style="margin:5px 0 0; color: var(--rose-gold);">ساعت ۱۸:۰۰ الی ۲۳:۰۰</p>
+            </div>
+            <div class="detail-item">
+                <h3>مکان برگزاری (تالار رویایی)</h3>
+                <p style="margin:0; opacity: 0.8;">تهران، زعفرانیه، خیابان مقدس اردبیلی، پلاک ۱۱۰، باغ تالار مجلل پردیس</p>
+                <p style="margin:5px 0 0; color: var(--rose-gold);">سالن تشریفات رویال</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- داستان عشق ما -->
+    <div class="card" style="text-align: center; line-height: 2;">
+        <h2 class="section-title">داستان ما</h2>
+        <p style="opacity: 0.85; max-width: 700px; margin: 0 auto;">
+            در امتداد جاده‌های پر پیچ و خم زندگی، تقدیر ما را به هم رساند تا کتاب تازه‌ای از عشق را ورق بزنیم. حضور شما در این شب خاطره‌انگیز، روشنی‌بخش محفل و مایه دلگرمی آغاز راه مشترک ما خواهد بود. قدم بر چشم ما بگذارید.
+        </p>
+    </div>
+
+    <!-- بخش تبریک‌ها و نظرات مهمانان -->
+    <div class="card">
+        <h2 class="section-title">دفتر یادبود و تبریکات</h2>
+        <div class="wishes-container" id="wishesBox">
+            <div class="wish-item"><strong>خانواده رضایی:</strong> با آرزوی خوشبختی و طراوت در تمام مراحل زندگی‌تان. مبارک باشه!</div>
+            <div class="wish-item"><strong>علی و مریم:</strong> به پای هم پیر بشید بچه‌ها، بهترین‌ها سهم قلبتون.</div>
+        </div>
+        <input type="text" id="guestName" placeholder="نام و نام خانوادگی شما">
+        <textarea id="guestWish" rows="3" placeholder="متن تبریک یا آرزوی زیبا برای عروس و داماد..."></textarea>
+        <button class="btn" onclick="addWish()">ثبت تبریک در دفتر یادبود</button>
+    </div>
+
+</div>
+
+<footer>
+    با احترام فراوان، منتظر حضور گرم شما عزیزان هستیم <span class="heart-icon">♥</span> ۱۴۰۵
+</footer>
+
+<script>
+    // تنظیم دقیق تاریخ عروسی (مثلاً ۲۸ آبان ۱۴۰۵ ساعت ۱۸:۰۰)
+    const weddingDate = new Date("Nov 18, 2026 18:00:00").getTime();
+
+    const timerInterval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.getElementById("days").innerHTML = "۰";
+            document.getElementById("hours").innerHTML = "۰";
+            document.getElementById("minutes").innerHTML = "۰";
+            document.getElementById("seconds").innerHTML = "۰";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+    }, 1000);
+
+    // تابع ثبت تبریک جدید توسط مهمانان
+    function addWish() {
+        const nameInput = document.getElementById("guestName");
+        const wishInput = document.getElementById("guestWish");
+        const wishesBox = document.getElementById("wishesBox");
+
+        if (nameInput.value.trim() === "" || wishInput.value.trim() === "") {
+            alert("لطفاً نام و متن تبریک خود را وارد کنید.");
+            return;
+        }
+
+        const newWish = document.createElement("div");
+        newWish.className = "wish-item";
+        newWish.innerHTML = `<strong>${nameInput.value}:</strong> ${wishInput.value}`;
+        
+        wishesBox.appendChild(newWish);
+        wishesBox.scrollTop = wishesBox.scrollHeight;
+
+        nameInput.value = "";
+        wishInput.value = "";
+        alert("تبریک شما با موفقیت ثبت شد. از محبت شما سپاسگزاریم!");
+    }
+</script>
+</body>
+</html>
